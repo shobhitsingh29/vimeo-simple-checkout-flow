@@ -1,15 +1,15 @@
-import {StyledFooter,StyledBtn} from './style'
+import {StyledFooter, StyledBtn} from './style'
 import React from "react";
 
-function Footer() {
+const Footer = (props) => {
     return <StyledFooter>
-            <StyledBtn>
-                add to cart
-            </StyledBtn>
-            <StyledBtn>
-                checkout
-            </StyledBtn>
+        <StyledBtn onClick={props.handleAddToCart}>
+            add to cart
+        </StyledBtn>
+        <StyledBtn>
+            checkout
+        </StyledBtn>
     </StyledFooter>
-}
+};
 
 export default Footer;

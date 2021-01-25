@@ -1,17 +1,18 @@
-import {StyledListHeader, StyledDiv} from '../commonStyles'
+import {StyledListHeader} from '../commonStyles'
+import { StyledD} from './style'
 import React from "react";
 
-function CartListHeader() {
+const CartListHeader = (props) => {
     return <StyledListHeader>
-        <StyledDiv>
+        <StyledD>
             <div>
-                no of items
+                no of items {props.cartListData.length}
             </div>
             <div>
-                cart items added........
+                your cart is Empty
             </div>
-        </StyledDiv>
+        </StyledD>
     </StyledListHeader>
-}
+};
 
 export default CartListHeader;

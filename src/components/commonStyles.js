@@ -9,7 +9,7 @@ export const StyledListHeader = styled.section`
 `;
 
 export const StyledDiv = styled.div`
-display:flex
+      display:flex
 `;
 
 

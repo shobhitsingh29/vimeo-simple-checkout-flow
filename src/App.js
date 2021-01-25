@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import ThemeContext from './sharedComponents/ThemeContext'
+import React, {useContext} from "react";
+import {StyledWrapper, StyledMain} from './style'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ProductListHeader from "./components/ProductListHeader";
+import CartListHeader from "./components/CartListHeader";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const theme = useContext(ThemeContext);
+    return (
+        <ThemeContext.Provider value={theme}>
+            <StyledWrapper>
+                <Header/>
+                <StyledMain>
+                    <ProductListHeader/>
+                    <CartListHeader/>
+                </StyledMain>
+                <Footer/>
+            </StyledWrapper>
+        </ThemeContext.Provider>
+    );
 }
 
 export default App;

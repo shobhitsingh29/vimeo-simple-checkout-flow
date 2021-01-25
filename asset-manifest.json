@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/vimeo-simple-checkout-flow/static/css/main.c63f90db.chunk.css",
+    "main.js": "/vimeo-simple-checkout-flow/static/js/main.1d987312.chunk.js",
+    "main.js.map": "/vimeo-simple-checkout-flow/static/js/main.1d987312.chunk.js.map",
+    "runtime-main.js": "/vimeo-simple-checkout-flow/static/js/runtime-main.b1416d76.js",
+    "runtime-main.js.map": "/vimeo-simple-checkout-flow/static/js/runtime-main.b1416d76.js.map",
+    "static/js/2.4040b4bd.chunk.js": "/vimeo-simple-checkout-flow/static/js/2.4040b4bd.chunk.js",
+    "static/js/2.4040b4bd.chunk.js.map": "/vimeo-simple-checkout-flow/static/js/2.4040b4bd.chunk.js.map",
+    "static/js/3.4e7d488e.chunk.js": "/vimeo-simple-checkout-flow/static/js/3.4e7d488e.chunk.js",
+    "static/js/3.4e7d488e.chunk.js.map": "/vimeo-simple-checkout-flow/static/js/3.4e7d488e.chunk.js.map",
+    "index.html": "/vimeo-simple-checkout-flow/index.html",
+    "static/css/main.c63f90db.chunk.css.map": "/vimeo-simple-checkout-flow/static/css/main.c63f90db.chunk.css.map",
+    "static/js/2.4040b4bd.chunk.js.LICENSE.txt": "/vimeo-simple-checkout-flow/static/js/2.4040b4bd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b1416d76.js",
+    "static/js/2.4040b4bd.chunk.js",
+    "static/css/main.c63f90db.chunk.css",
+    "static/js/main.1d987312.chunk.js"
+  ]
+}

@@ -7,4 +7,6 @@ export const StyledFooter = styled.footer`
 
 export const StyledBtn = styled.button`
      width: 50%;
+          background: ${props => props.theme.background};
+
 `;

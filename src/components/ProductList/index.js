@@ -1,17 +1,16 @@
 import React from "react";
-import {StyledLi} from './style'
+import {StyledLi,StyledUl} from './style'
 
-function ProductList({productListData}) {
-    return <ul>
-
-        {productListData ? productListData.map(({id,title}) => {
-            return <StyledLi key={id}>
-                <input type='checkbox' />
+function ProductList({listData, showCheckBox = true,handleCheckbox}) {
+    return <StyledUl>
+        {listData ? listData.map(({id, title,selected},index) => {
+            return <StyledLi key={id*index}>
+                {showCheckBox && <input type='checkbox' checked={selected} onChange={handleCheckbox.bind(null,id)}/>}
                 {title}
             </StyledLi>
 
         }) : <p>Loading.........</p>}
-    </ul>
+    </StyledUl>
 
 }
 

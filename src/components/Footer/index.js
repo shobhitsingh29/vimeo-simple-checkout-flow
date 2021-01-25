@@ -1,12 +1,12 @@
 import {StyledFooter, StyledBtn} from './style'
 import React from "react";
 
-const Footer = (props) => {
+const Footer = ({handleCheckout,handleAddToCart}) => {
     return <StyledFooter>
-        <StyledBtn onClick={props.handleAddToCart}>
+        <StyledBtn onClick={handleAddToCart}>
             add to cart
         </StyledBtn>
-        <StyledBtn>
+        <StyledBtn onClick={handleCheckout}>
             checkout
         </StyledBtn>
     </StyledFooter>

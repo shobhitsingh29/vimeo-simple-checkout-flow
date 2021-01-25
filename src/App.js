@@ -1,5 +1,6 @@
-import ThemeContext from './sharedComponents/ThemeContext'
-import React, {useEffect, useContext, useState, useRef} from "react";
+import {ThemeStore} from './sharedComponents/ThemeContext'
+import Theme from './sharedComponents/ThemeContext/theme'
+import React, {useEffect, useState, useRef} from "react";
 import {StyledWrapper, StyledMain} from './style'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,7 +8,6 @@ import ProductListHeader from "./components/ProductListHeader";
 import CartListHeader from "./components/CartListHeader";
 
 function App() {
-    const theme = useContext(ThemeContext);
     const [productListData, setProductListData] = useState([]);
     const [cartListData, setCartListData] = useState([]);
     const inputRef = useRef(null);
@@ -28,25 +28,49 @@ function App() {
             fetchProductListData().then(r => r);
         }
     };
-    const handleAddToCart = (indexList) => {
-        setCartListData()
+    const handleAddToCart = () => {
+        const selectedList = productListData.filter(({selected}) => selected === true);
+
+        setCartListData(cartListData.concat(selectedList));
+    };
+
+    const handleCheckout = () => {
+
+        setCartListData([]);
+    };
+
+    const handleCheckbox = (selectedId, e) => {
+        const selectedList = productListData.map((item) => {
+
+
+            if (item.id === selectedId) {
+                item.selected = !item.selected;
+            }
+            return item
+
+
+        });
+        setProductListData(selectedList)
     };
 
     useEffect(() => {
         fetchProductListData().then(r => r);
     }, []);
     return (
-        <ThemeContext.Provider value={theme}>
-            <StyledWrapper>
-                <Header/>
-                <StyledMain>
-                    <ProductListHeader productListData={productListData} handleSearch={handleSearch}
-                                       inputRef={inputRef}/>
-                    <CartListHeader cartListData={cartListData}/>
-                </StyledMain>
-                <Footer handleAddToCart={handleAddToCart}/>
-            </StyledWrapper>
-        </ThemeContext.Provider>
+        <ThemeStore>
+            <Theme>
+                <StyledWrapper>
+                    <Header/>
+                    <StyledMain>
+                        <ProductListHeader productListData={productListData} handleSearch={handleSearch}
+                                           handleCheckbox={handleCheckbox}
+                                           inputRef={inputRef}/>
+                        <CartListHeader cartListData={cartListData}/>
+                    </StyledMain>
+                    <Footer handleAddToCart={handleAddToCart} handleCheckout={handleCheckout}/>
+                </StyledWrapper>
+            </Theme>
+        </ThemeStore>
     );
 }
 

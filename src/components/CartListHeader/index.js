@@ -1,15 +1,17 @@
 import {StyledListHeader} from '../commonStyles'
-import { StyledD} from './style'
+import {StyledD,StyledDivWithBorder} from './style'
 import React from "react";
+import ProductList from "../ProductList";
 
-const CartListHeader = (props) => {
+const CartListHeader = ({cartListData}) => {
     return <StyledListHeader>
         <StyledD>
+            <StyledDivWithBorder>
+                no of items : {cartListData.length}
+            </StyledDivWithBorder>
             <div>
-                no of items {props.cartListData.length}
-            </div>
-            <div>
-                your cart is Empty
+                {cartListData.length ?
+                    <ProductList listData={cartListData} showCheckBox={false}/> : 'your cart is Empty'}
             </div>
         </StyledD>
     </StyledListHeader>

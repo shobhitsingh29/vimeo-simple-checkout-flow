@@ -9,7 +9,7 @@ const ProductListHeader = (props) => {
             <StyledInput width={'80%'} type='text' placeholder='enter product name here' ref={props.inputRef}/>
             <StyledSearch width={'20%'} onClick={props.handleSearch}>Search</StyledSearch>
         </StyledDiv>
-        <ProductList productListData={props.productListData}/>
+        <ProductList listData={props.productListData} handleCheckbox={props.handleCheckbox}/>
 
     </StyledListHeader>
 };
